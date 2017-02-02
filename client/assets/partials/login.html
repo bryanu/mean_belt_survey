@@ -1,21 +1,21 @@
-<div ng-controller="usersController as UC" class="viewwrapper2">
+<div ng-controller="usersController as UC">
 
 	<div>
 		<h1>Login</h1>
 		<form>
-			<label>User Name: <input type="text" ng-model="UC.loginInfo.first_name"></label>
-			<div ng-if="UC.errors.length > 0" class="errormsg3">{{UC.errors}}</div>
+			<p>User: <input type="text" ng-model="UC.loginInfo.first_name"></p>
+			<div ng-if="UC.errors.length > 0">{{UC.errors}}</div>
 			<button ng-click="UC.login()" class="waves-effect waves-light btn">Login</button>
 		</form>
 	</div>
-	<br><br>
+	<br>
 	<div>
 		<h1>Register</h1>
 		<form>
-			<label>First Name <input type="text" ng-model="UC.regInfo.first_name"></label>
-			<div ng-if="UC.errors.reg.length > 0" class="errormsg3">{{UC.errors.reg}}</div>
+			<p>First Name <input type="text" ng-model="UC.regInfo.first_name"></p>
 			<button ng-click="UC.register()" class="waves-effect waves-light btn">Register</button>
 		</form>
+		<div ng-if="UC.errors.reg.length > 0">{{UC.errors.reg}}</div>
 	</div>
 
 </div>

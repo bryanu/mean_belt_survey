@@ -1,13 +1,6 @@
-body {
-  font-size: 17px;
-}
 .viewwrapper {
   width: 95%;
   margin: auto;
-}
-.viewwrapper2 {
-  width: 50%;
-  margin: 90px auto;
 }
 .options {
   margin-left: 25px;
@@ -24,20 +17,12 @@ body {
   margin-left: 10px;
   font-size: .85em;
 }
-.errormsg3 {
-  color: red;
-  font-size: 1.2em;
-  font-weight: bold;
-}
+
 .welcome {
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: bold;
   color: black;
-  text-align: right;
 }
  .head1 {
    margin-top: 20px;
  }
-label {
-  font-size: 20px;
-}

@@ -1,13 +1,10 @@
 <div ng-controller="usersController as UC">
-	<div class="row head1">
-		<div class="col s6">
-			<a href="#/createPoll" class="waves-effect waves-light btn">Create New Poll</a>
-		</div>
-		<div class="col s6 welcome">Welcome, {{currentusername}}!</div>
+	<div class="head1">
+		<a href="#/createPoll" class="waves-effect waves-light btn">Create New Poll</a>
 	</div>
 	<div ng-controller="pollsController as PC" class="main">
 		<h3>Current Polls</h3>
-		<label>Search: <input type="text" ng-model="filterName"></label>
+		<span>Search: <input type="text" ng-model="filterName"></span>
 		<table class="bordered">
 			<thead>
 				<tr>
