@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Mean Belt Exam - (Survey's)</title>
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css" rel="stylesheet">
+  <link href="static/css/style.css" rel="stylesheet" >
+	<script src="angular/angular.js"></script>
+	<script src="angular-route/angular-route.js"></script>
+	<script src="assets/app.js"></script>
+	<script src="assets/controllers/userController.js"></script>
+	<script src="assets/controllers/pollController.js"></script>
+	<script src="assets/controllers/voteController.js"></script>
+	<script src="assets/factories/userFactory.js"></script>
+	<script src="assets/factories/pollFactory.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <nav>
+      <div class="nav-wrapper" ng-controller="usersController">
+        <a href="#" class="brand-logo"> &nbsp;MEAN | Survey</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+					<!-- <li><span class="welcome" ng-show='loggedIn'>Welcome, {{currentusername}}! &nbsp;&nbsp;</span</li> -->
+          <li><a href="#!/" ng-click='usersController.logout()' ng-show='loggedIn'><strong>Logout</strong></a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="viewwrapper" ng-view=""></div>
+  </div>
+	<!-- <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script> -->
+</body>
+
+</html>

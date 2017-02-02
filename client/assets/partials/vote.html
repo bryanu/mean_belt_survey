@@ -1,0 +1,26 @@
+<div ng-controller="votesController as VC">
+	<br>
+	<a href="#/dashboard" class="btn waves-effect waves-light">
+		<i class="material-icons right">view_list</i>Go to Polls
+	</a>
+	<h2 ng-bind="VC.survey.poll"></h2>
+	<h5>Click the Vote button to cast your vote.</h5>
+	<table class="bordered">
+		<thead>
+			<tr>
+				<th>Option</th>
+				<th>Vote Count</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody ng-repeat="option in VC.survey._options">
+			<tr>
+				<td ng-bind="option.option"></td>
+				<td ng-bind="option.like"></td>
+				<td>
+					<button ng-click="VC.increaseVote(option._id)" class="waves-effect waves-light btn">Vote!</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

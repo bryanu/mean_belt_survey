@@ -1,0 +1,45 @@
+<div ng-controller="usersController as UC">
+	<div ng-controller="pollsController as PC">
+		<h4>Enter the question and options here.</h4>
+		<br>
+		<label>Question
+			<span class="errormsg" ng-bind="PC.pollErrors.question"></span>
+			<input type="text" ng-model="PC.pollInfo.question">
+		</label>
+
+		<div class="options">
+			<label>Option 1
+				<span class="errormsg" ng-bind="PC.pollErrors.option1"></span>
+				<input type="text" ng-model="PC.pollInfo.option1">
+			</label>
+
+			<label>Option 2
+				<span class="errormsg" ng-bind="PC.pollErrors.option2"></span>
+				<input type="text" ng-model="PC.pollInfo.option2">
+			</label>
+
+			<label>Option 3
+				<span class="errormsg" ng-bind="PC.pollErrors.option3"></span>
+				<input type="text" ng-model="PC.pollInfo.option3">
+			</label>
+
+			<label>Option 4
+				<span class="errormsg" ng-bind="PC.pollErrors.option4"></span>
+				<input type="text" ng-model="PC.pollInfo.option4">
+			</label>
+
+			<div ng-if="PC.errors.length">
+				<h5>
+					<span><strong>Please complete the form before submitting it.</strong></span>
+					<div class="errormsg2">* The question must be at least 8 characters long.</div>
+					<div class="errormsg2">* Each option must be at least 3 characters long.</div>
+				</h5>
+			</div>
+
+			<button ng-click="PC.create(UC.user.first_name)" class="waves-effect waves-light btn">Create Poll</button>
+
+			<a href="#/dashboard" class="waves-effect waves-light btn">Cancel</a>
+
+		</div>
+	</div>
+</div>

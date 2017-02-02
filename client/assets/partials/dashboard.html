@@ -1,0 +1,34 @@
+<div ng-controller="usersController as UC">
+	<div class="row head1">
+		<div class="col s6">
+			<a href="#/createPoll" class="waves-effect waves-light btn">Create New Poll</a>
+		</div>
+		<div class="col s6 welcome">Welcome, {{currentusername}}!</div>
+	</div>
+	<div ng-controller="pollsController as PC" class="main">
+		<h3>Current Polls</h3>
+		<label>Search: <input type="text" ng-model="filterName"></label>
+		<table class="bordered">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Question</th>
+					<th>Date Posted</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody ng-repeat="survey in PC.surveys | filter: filterName | orderBy: '-createdAt'">
+				<tr>
+					<td ng-bind="survey._user"></td>
+					<td>
+						<a href="#/vote/{{survey._id}}" class="waves-effect waves-light btn">{{survey.poll}}?</a>
+					</td>
+					<td ng-bind="survey.createdAt | date"></td>
+					<td>
+						<button ng-if="survey._user == UC.user.first_name" ng-click="PC.delete(survey._id)"  class="waves-effect waves-light btn">Delete</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

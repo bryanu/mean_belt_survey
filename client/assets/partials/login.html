@@ -1,0 +1,21 @@
+<div ng-controller="usersController as UC" class="viewwrapper2">
+
+	<div>
+		<h1>Login</h1>
+		<form>
+			<label>User Name: <input type="text" ng-model="UC.loginInfo.first_name"></label>
+			<div ng-if="UC.errors.length > 0" class="errormsg3">{{UC.errors}}</div>
+			<button ng-click="UC.login()" class="waves-effect waves-light btn">Login</button>
+		</form>
+	</div>
+	<br><br>
+	<div>
+		<h1>Register</h1>
+		<form>
+			<label>First Name <input type="text" ng-model="UC.regInfo.first_name"></label>
+			<div ng-if="UC.errors.reg.length > 0" class="errormsg3">{{UC.errors.reg}}</div>
+			<button ng-click="UC.register()" class="waves-effect waves-light btn">Register</button>
+		</form>
+	</div>
+
+</div>
